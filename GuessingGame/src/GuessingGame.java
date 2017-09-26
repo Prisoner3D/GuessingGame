@@ -1,5 +1,5 @@
 /*
- * Name: Thomas Zhao
+ * Name: Thomas Zhou
  * Date : 9/26/2017
  * Description: Guessing game with numbers from 1 to 10.
 */
