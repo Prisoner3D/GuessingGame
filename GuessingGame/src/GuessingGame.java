@@ -1,8 +1,14 @@
+/*
+ * Name: Thomas Zhao
+ * Date : 9/26/2017
+ * Description: Guessing game with numbers from 1 to 10.
+*/
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class GuessingGame {
-
+	
 	public static void main(String[] args) {
+		
 		Scanner input = new Scanner(System.in);
 		System.out.println("What's your name?");
 		String s = input.next();
