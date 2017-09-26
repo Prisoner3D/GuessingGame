@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class GuessingGame {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		System.out.println("What's your name?");
 		String s = input.next();
@@ -32,8 +31,53 @@ public class GuessingGame {
 			catch(InputMismatchException e)
 			{
 				System.out.println("Sorry, you typed an error: " + e);
+				input.next();
 			}
 		}
+		int guess = (int)(100 * Math.random() + 1);
+		int min = 1;
+		int max = 100;
+		System.out.println("Great, now let's play a game. I have a number between " + min + " and " + max + " and I want you to guess the number.");
+		System.out.println("I'll tell you if your guess is too high or too low.");
+		System.out.println("What's your guess?");
+		int attempt = 1;
+		while (true)
+		{
+			try
+			{
+				int g = input.nextInt();
+				if (g < min || g > max)
+				{
+					System.out.print(g + " is out of the range! ");
+					System.out.println("What's your guess?");
+					attempt++;
+				}
+				else if (g > guess)
+				{
+					System.out.print(g + " is too high! ");
+					System.out.println("What's your guess?");
+					attempt++;
+				}
+				else if (g < guess)
+				{
+					System.out.print(g + " is too low! ");
+					System.out.println("What's your guess?");
+					attempt++;
+				}
+				else
+				{
+					break;
+				}
+			}
+			catch(InputMismatchException e)
+			{
+				System.out.println("Sorry, you typed an error: " + e);
+				System.out.println("What's your guess?");
+				input.next();
+			}
+		}
+		System.out.println("Correct! You took " + attempt + " attempts.");
+		
 	}
 
 }
