@@ -41,9 +41,9 @@ public class GuessingGame {
 				input.next();
 			}
 		}
-		int guess = (int)(100 * Math.random() + 1);
 		int min = 1;
 		int max = 100;
+		int guess = (int)(max * Math.random() + min);
 		System.out.println("Great, now let's play a game. I have a number between " + min + " and " + max + " and I want you to guess the number.");
 		System.out.println("I'll tell you if your guess is too high or too low.");
 		System.out.println("What's your guess?");
